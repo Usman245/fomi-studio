@@ -1,0 +1,128 @@
+.workspaceShell {
+  --fomi-bg: #fcfaf8;
+  --fomi-panel: #f6eeea;
+  --fomi-panel-border: #ede0d9;
+  --fomi-card-prompt: #f8ede8;
+  --fomi-history-bg: #f9f3f0;
+  --fomi-tab-active: #f4e6e4;
+  --fomi-accent: #d17d60;
+  --fomi-generate: #dc9d86;
+  --fomi-generate-hover: #ce886f;
+  --fomi-text-primary: #191615;
+  --fomi-text-secondary: #5c534f;
+  --fomi-text-muted: #8c827d;
+  background-color: var(--fomi-bg);
+  color: var(--fomi-text-primary);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.workspaceShellDark {
+  --fomi-bg: #111010;
+  --fomi-panel: #1b1817;
+  --fomi-panel-border: #2c2624;
+  --fomi-card-prompt: #1e1a18;
+  --fomi-history-bg: #181514;
+  --fomi-tab-active: #2e2522;
+  --fomi-accent: #e08b6d;
+  --fomi-generate: #d98e73;
+  --fomi-generate-hover: #e59b80;
+  --fomi-text-primary: #f5f0ed;
+  --fomi-text-secondary: #b8ada8;
+  --fomi-text-muted: #7d736e;
+  background-color: var(--fomi-bg);
+  color: var(--fomi-text-primary);
+}
+
+/* Custom thin vertical scrollbar matching right edge of mockup */
+.feedScroller {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(180, 165, 158, 0.45) transparent;
+}
+
+.feedScroller::-webkit-scrollbar {
+  width: 5px;
+}
+
+.feedScroller::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.feedScroller::-webkit-scrollbar-thumb {
+  background: rgba(180, 165, 158, 0.45);
+  border-radius: 9999px;
+}
+
+.feedScroller::-webkit-scrollbar-thumb:hover {
+  background: rgba(160, 130, 118, 0.75);
+}
+
+/* Horizontal scrollbar hidden for History strip while remaining scrollable */
+.historyScroller {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.historyScroller::-webkit-scrollbar {
+  display: none;
+}
+
+/* Right edge soft fade on the History strip matching thumbnail 13-14 in mockup */
+.historyRightFade {
+  background: linear-gradient(
+    90deg,
+    rgba(249, 243, 240, 0) 0%,
+    rgba(249, 243, 240, 0.65) 55%,
+    rgba(249, 243, 240, 0.96) 100%
+  );
+}
+
+.workspaceShellDark .historyRightFade {
+  background: linear-gradient(
+    90deg,
+    rgba(24, 21, 20, 0) 0%,
+    rgba(24, 21, 20, 0.65) 55%,
+    rgba(24, 21, 20, 0.96) 100%
+  );
+}
+
+/* Shimmer loading animation for active AI generation */
+@keyframes pulseShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmerCard {
+  background: linear-gradient(
+    110deg,
+    #f3e7e1 25%,
+    #fdf9f7 50%,
+    #f3e7e1 75%
+  );
+  background-size: 200% 100%;
+  animation: pulseShimmer 1.8s infinite linear;
+}
+
+.workspaceShellDark .shimmerCard {
+  background: linear-gradient(
+    110deg,
+    #221d1b 25%,
+    #2e2724 50%,
+    #221d1b 75%
+  );
+  background-size: 200% 100%;
+}
+
+/* Subtle card lift & image zoom on hover */
+.outputCard {
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.outputCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px -8px rgba(45, 32, 26, 0.16);
+}

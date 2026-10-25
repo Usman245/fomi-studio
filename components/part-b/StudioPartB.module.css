@@ -1,0 +1,31 @@
+.studioContainer {
+  background: radial-gradient(
+      circle at 50% 0%,
+      rgba(209, 125, 96, 0.08) 0%,
+      transparent 55%
+    ),
+    #0d0c0c;
+  color: #f4efec;
+}
+
+.canvasStage {
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.06) 1px,
+    transparent 1px
+  );
+  background-size: 20px 20px;
+}
+
+.lightingPad {
+  background: radial-gradient(
+    circle at center,
+    rgba(209, 125, 96, 0.14) 0%,
+    rgba(22, 19, 18, 0.95) 72%
+  );
+}
+
+.dockGlass {
+  background: rgba(23, 20, 19, 0.86);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
